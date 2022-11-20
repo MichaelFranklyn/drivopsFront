@@ -1,5 +1,4 @@
 import { useTheme } from "@mui/material/styles";
-import dayjs from "dayjs";
 import * as React from "react";
 import {
   Bar,
@@ -14,13 +13,22 @@ import Title from "../Title";
 
 export default function Chart1(props) {
   const theme = useTheme();
+
+  const arrayChart = { ...props.dataChart3 };
   const newArray = [];
+
+  for (const [key, value] of Object.entries(arrayChart)) {
+    newArray.push({
+      mes: value.mes,
+      media: String(Number(value.media).toFixed(2)),
+    });
+  }
 
   return (
     <React.Fragment>
       <Title>Média por mês</Title>
       <ResponsiveContainer>
-        <BarChart data={props.dataChart3}>
+        <BarChart data={newArray}>
           <XAxis
             dataKey="mes"
             stroke={theme.palette.text.secondary}

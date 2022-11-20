@@ -1,5 +1,4 @@
 import { useTheme } from "@mui/material/styles";
-import dayjs from "dayjs";
 import * as React from "react";
 import {
   Bar,
