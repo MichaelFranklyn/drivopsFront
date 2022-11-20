@@ -24,10 +24,7 @@ export default function SwitchRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/">
-          <Route path="/" element={<SignIn />} />
-          <Route path="/signin" element={<SignIn />} />
-        </Route>
+        <Route path="/" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route element={<ProtectRoutes redirectTo={"/signin"} />}>
           <Route path="/dashboard" element={<Dashboard />} />
